@@ -4,7 +4,7 @@
     <title>Auction Homepage</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap-slider.css">
-    <link rel="stylesheet" href="assets/css/datepicker.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
 </head>
 <body>
 
@@ -19,11 +19,11 @@
             <a class="navbar-brand" href="index.html">ABC Auction</a>
         </div>
         <div class="navbar-collapse collapse">
-            <form id="searchForm" class="navbar-form navbar-left navbar-input-group" role="search">
+            <form class="navbar-form navbar-left navbar-input-group" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter product name">
                 </div>
-                <button id="searchButton" type="button" class="btn btn-default">Search</button>
+                <button id="searchButton" type="submit" class="btn btn-default">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
@@ -31,6 +31,7 @@
                 <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                 <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping
                     cart</a></li>
+                cart</a></li>
             </ul>
         </div>
     </div>
@@ -72,20 +73,20 @@
             </a>
         </div>
 
-        <!-- / Featured Products -->
-    </div>
-    <br/><br/>
 
-    <div class="row">
+        <div id="extra-search">
 
-        <div id="searchResultsForm">
-            <div class="row">
-                <a href="index.html">Home</a><b> > </b><span class="active">Search Results</span>
+            <div class="row bread-crumbs">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Search Results</a></li>
+                </ol>
             </div>
-            <br><br>
 
-            <form id="find">
-                <div class="row">
+            <div class="row">
+
+                <form id="extra-search-form">
+
                     <div class="col-md-4 col-sm-12 col-xs-12">
 
                         <div class="col-md-12 col-sm-6 col-xs-12">
@@ -148,7 +149,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label>Max Auction Close Date</label>
 
-                                <div id="aucclosedate" class="input-group date">
+                                <div class="input-group date datepicker">
                                     <input type='text' class="form-control"/>
                                     <span class="input-group-addon"><span
                                             class="glyphicon glyphicon-calendar"></span></span>
@@ -174,21 +175,25 @@
 
                         </div>
                     </div>
-                </div>
-                <br>
 
-                <div class="row col-md-10">
-                    <button class="center-block btn btn-default" type="submit">Find now</button>
-                </div>
-                <br>
-                <br>
-            </form>
+                    <br>
 
-            <ul class="list-unstyled" id="searchResults">
-                <script id="search_results_template" type="text/x-handlebars-template">
+                    <div class="row col-md-10">
+                        <button class="center-block btn btn-default" type="submit">Find now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                    {{#each this}}
+    <div class="row">
 
+        <ul class="list-unstyled" id="templates">
+
+            <script id="search_template" type="text/x-handlebars-template">
+
+                {{#each this}}
+                <div class="search_template">
                     <li class="col-sm-6">
                         <div class="col-md-4">
                             <a href="{{url}}"><img src="{{thumb}}" alt="" class="img-responsive"></a>
@@ -239,33 +244,33 @@
 
                         </div>
                     </li>
+                </div>
 
-                    {{/each}}
+                {{/each}}
 
-                </script>
-            </ul>
+            </script>
 
-        </div>
-        <!-- Featured Products list with thumbnails and description  -->
-        <ul class="list-unstyled" id="products">
-            <script id="products_list_template" type="text/x-handlebars-template">
+
+            <script id="products_template" type="text/x-handlebars-template">
 
                 {{#each this}}
+                <div class="products_template">
 
-                <li class="col-sm-4">
-                    <div class="col-md-4">
-                        <a href="{{url}}"><img src="{{thumb}}" alt="" class="img-responsive"></a>
-                    </div>
+                    <li class="col-sm-4">
+                        <div class="col-md-4">
+                            <a href="{{url}}"><img src="{{thumb}}" alt="" class="img-responsive"></a>
+                        </div>
 
-                    <div class="col-md-8">
-                        <h2><a href="javascript:void(0)">{{title}}</a></h2>
+                        <div class="col-md-8">
+                            <h2><a href="javascript:void(0)">{{title}}</a></h2>
 
-                        <p>
-                            <b>Item's description:</b>
-                            {{description}}
-                        </p>
-                    </div>
-                </li>
+                            <p>
+                                <b>Item's description:</b>
+                                {{description}}
+                            </p>
+                        </div>
+                    </li>
+                </div>
 
                 {{/each}}
 
@@ -273,11 +278,6 @@
         </ul>
         <!-- / Featured Products list with thumbnails and description  -->
     </div>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-    <!-- / Footer -->
-
 </div>
 
 <footer class="text-center">
@@ -293,7 +293,7 @@
 <script src="assets/js/handlebars-v2.0.0.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap-slider.min.js"></script>
-<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
