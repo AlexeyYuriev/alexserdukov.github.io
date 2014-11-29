@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auction Homepage</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="assets/css/datepicker.css">
+</head>
+<body>
+
+<div id="navbar" class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">ABC Auction</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form id="searchForm" class="navbar-form navbar-left navbar-input-group" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter product name">
+                </div>
+                <button id="searchButton" type="button" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
+                </li>
+                <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping
+                    cart</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <!-- Featured Products -->
+
+        <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
+             data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
+                <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="assets/img/promo-product-1.jpg" alt="ABC Auction Deals"
+                         class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="assets/img/promo-product-2.jpg" alt="ABC Auction Deals"
+                         class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="assets/img/promo-product-3.jpg" alt="ABC Auction Deals"
+                         class="img-responsive center-block">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <!-- / Featured Products -->
+    </div>
+    <br/><br/>
+
+    <div class="row">
+
+        <div id="searchResultsForm">
+            <div class="row">
+                <a href="index.html">Home</a><b> > </b><span class="active">Search Results</span>
+            </div>
+            <br><br>
+
+            <form id="find">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+
+                        <div class="col-md-12 col-sm-6 col-xs-12">
+                            <label>Product</label>
+
+                            <div class="input-group col-md-10">
+                                <input type="text" class="form-control" placeholder="Product Title">
+                            </div>
+                        </div>
+
+
+                        <br>
+
+
+                        <div class="col-md-12 col-sm-6 col-xs-12">
+                            <!-- Single button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                    Category <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Category 1</a></li>
+                                    <li><a href="#">Category 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+
+                        <label>Current Price</label>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">@</span>
+                                    <input id="priceFrom" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">@</span>
+                                    <input id="priceTo" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row col-md-10" align="center">
+                            <p><input id="slider" type="text" class="span2" value="" data-slider-min="1000"
+                                      data-slider-max="1500"
+                                      data-slider-step="5" data-slider-value="[1000,1500]"/></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <label>Max Auction Close Date</label>
+
+                                <div id="aucclosedate" class="input-group date">
+                                    <input type='text' class="form-control"/>
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <!-- Single button -->
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <label>Number of bids:</label>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <input type='number' class="form-control"/>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row col-md-10">
+                    <button class="center-block btn btn-default" type="submit">Find now</button>
+                </div>
+                <br>
+                <br>
+            </form>
+
+            <ul class="list-unstyled" id="searchResults">
+                <script id="search_results_template" type="text/x-handlebars-template">
+
+                    {{#each this}}
+
+                    <li class="col-sm-6">
+                        <div class="col-md-4">
+                            <a href="{{url}}"><img src="{{thumb}}" alt="" class="img-responsive"></a>
+                        </div>
+
+                        <div class="col-md-8">
+                            <h2><a href="javascript:void(0)">{{title}}</a></h2>
+
+                            <p>
+                                <b>Item's description:</b>
+                                {{description}}
+                            </p>
+                        </div>
+
+                        <div class="row col-md-12">
+                            <div class="col-md-4 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-6">
+                                        <p class="text-center"><strong>{{timeleft}}h left</strong></p>
+                                    </div>
+                                    <div class="col-md-12 col-xs-6">
+                                        <p class="text-center current-time"><span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-6">
+                                        <p class="text-center"><img src="assets/img/glyphicons-52-eye-open.png"
+                                                                    style="width: 25px; height: 16px;"><strong>
+                                            {{watchers}}</strong></p>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-6">
+                                        <p class="text-center">Watchers</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-6">
+                                        <p class="text-center"><strong>{{price}}$</strong></p>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-6">
+                                        <p class="text-center">Current price</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    {{/each}}
+
+                </script>
+            </ul>
+
+        </div>
+        <!-- Featured Products list with thumbnails and description  -->
+        <ul class="list-unstyled" id="products">
+            <script id="products_list_template" type="text/x-handlebars-template">
+
+                {{#each this}}
+
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="{{url}}"><img src="{{thumb}}" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2><a href="javascript:void(0)">{{title}}</a></h2>
+
+                        <p>
+                            <b>Item's description:</b>
+                            {{description}}
+                        </p>
+                    </div>
+                </li>
+
+                {{/each}}
+
+            </script>
+        </ul>
+        <!-- / Featured Products list with thumbnails and description  -->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- / Footer -->
+
+</div>
+
+<footer class="text-center">
+    <br/>
+    <a href="javascript:void(0)">Home</a> |
+    <a href="javascript:void(0)">Search</a> |
+    <a href="javascript:void(0)">About Us</a> |
+    <a href="javascript:void(0)">Terms of Service</a>
+    <br/><br/>
+</footer>
+
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="assets/js/handlebars-v2.0.0.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
