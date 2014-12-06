@@ -1,0 +1,94 @@
+<div class="row bread-crumbs">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Search Results</a></li>
+    </ul>
+</div>
+
+<div class="row">
+
+    <form id="extra-search-form">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <label>Product</label>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Product Title">
+                    </div>
+                    <div class="btn-group col-md-12">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="false">
+                            Category <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+
+                <label>Current Price</label>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input id="priceFrom" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input id="priceTo" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <p><input id="slider" type="text" class="span2" value="" data-slider-min="500"
+                              data-slider-max="2500"
+                              data-slider-step="10" data-slider-value="[1000,1500]"/></p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <label>Max Auction Close Date</label>
+
+                        <div class="input-group date datepicker">
+                            <input type='text' class="form-control"/>
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+
+                <!-- Single button -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label>Number of bids:</label>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <input type='number' class="form-control"/>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row col-md-10">
+                <button class="center-block btn btn-default" type="submit">Find now</button>
+            </div>
+        </div>
+    </form>
+</div>

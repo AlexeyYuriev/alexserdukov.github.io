@@ -1,0 +1,20 @@
+{{#each this}}
+<div class="products_template">
+
+    <li class="col-sm-4">
+        <div class="col-md-4">
+            <a href="{{url}}"><img src="{{thumb}}" alt="" class="img-responsive"></a>
+        </div>
+
+        <div class="col-md-8">
+            <h2><a href="javascript:void(0)">{{title}}</a></h2>
+
+            <p>
+                <b>Item's description:</b>
+                {{description}}
+            </p>
+        </div>
+    </li>
+</div>
+
+{{/each}}
