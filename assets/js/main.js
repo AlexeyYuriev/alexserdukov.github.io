@@ -7,7 +7,7 @@ function defaults() {
 
     $.get("navbar.html", function (html) {
         $("#navbar").append(html);
-        $(".navbar-form").submit(function () {
+        $(".navbar-form").submit(function (event) {
             $(".navbar-form").hide();
             $("#carousel").hide();
             $(".products_template").hide();
